@@ -1,0 +1,66 @@
+Docker:
+--------
+Docker is an application that runs containers on your machine. 
+Docker is a technology that provides the tools for you to build, run, test, and deploy distributed applications in containers.
+It is a open-source centralized platform designed to create, deploy, and run applications.
+Docuker is written on go-language.
+Docuker uses container on host OS to run applications.
+we can install docker on any OS but docker engine natively runs on Linux distribution.
+Docker performs OS Level vertialization also known as containerization.
+It was initially release in march 2023, and developed by solomon and Sebastian pahl.
+
+
+-> Logically dividing a single physical server into multiple VMs - Thats called VM Technology.
+	Inside physical server, we have hypervisor and run multiple VMs.
+	Example: Microservices for Roboshop Project:
+				Cart -> Need to create one VM(server)
+				User -> VM
+				Catalogue -> VM
+
+Container:
+------------
+-> Inside VM, we can run multiple containers. so that we can even improve resource utilization.
+	Example: Microservices for Roboshop Project: We can create one single VM, then create multiple containers in same VM
+				Cart -> Container
+				User -> Container
+				Catalogue -> Container
+
+Installation of Docker: 
+-------------------------
+Create one EC2 in AWS console and launch it.
+
+To install Docker on Amazon Linux 2 or Amazon Linux 2023
+Update the installed packages and package cache on your instance.
+
+$ sudo yum update -y
+
+Install the most recent Docker Community Edition package.
+
+For Amazon Linux 2, run the following:
+
+$ sudo amazon-linux-extras install docker
+
+For Amazon Linux 2023, run the following:
+
+$ sudo yum install -y docker
+
+Start the Docker service.
+
+$ sudo service docker start
+
+Add the ec2-user to the docker group so that you can run Docker commands without using sudo.
+
+$ sudo usermod -a -G docker ec2-user
+
+Pick up the new docker group permissions by logging out and logging back in again. To do this, close your current SSH terminal window and reconnect to your instance in a new one. Your new SSH session should have the appropriate docker group permissions.
+
+Verify that the ec2-user can run Docker commands without using sudo.
+
+$ docker ps
+
+You should see the following output, confirming that Docker is installed and running:
+
+CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
+
+
+
