@@ -58,20 +58,20 @@ Step-by-Step Guide:
 Go to AWS Console.
 Launch an instance using Amazon Linux 2 or Amazon Linux 2023.
 2. Update Your System
-sudo yum update -y
+$sudo yum update -y
 3. Install Docker
 For Amazon Linux 2:
-sudo amazon-linux-extras install docker
+$sudo amazon-linux-extras install docker
 For Amazon Linux 2023:
-sudo yum install -y docker
+$sudo yum install -y docker
 4. Start the Docker Service
-sudo service docker start
+$sudo service docker start
 5. Add Your User to Docker Group
-sudo usermod -a -G docker ec2-user
+$sudo usermod -a -G docker ec2-user
 6. Reconnect SSH
 Close your terminal.
 Reconnect using SSH to apply new group permissions.
 7. Verify Docker Installation
-docker ps
+$docker ps
 
 You should see an empty container list output (no errors), confirming Docker is installed and working.
