@@ -99,6 +99,8 @@ docker exec -it <container-id> bash/sh
 
 docker run -d --name mynginx -p 8080:80 nginx -> to set name for container
 
+docker logs <container-id> - to check logs
+
 
 
 
