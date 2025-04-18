@@ -101,6 +101,16 @@ docker run -d --name mynginx -p 8080:80 nginx -> to set name for container
 
 docker logs <container-id> - to check logs
 
+---------------------------------------------------------------------------------------
+
+How to create Image:
+-----------------------
+dockerfile -> declarative way of creating own images
+docker is declarative way of creating images
+We can build the images and can push to any docker repository
+
+
+
 
 
 
