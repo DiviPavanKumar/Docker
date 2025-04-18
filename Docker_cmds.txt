@@ -1,0 +1,2 @@
+$docker images -> list down the images in the server
+docker pull image-name:version -> download the image from docker-Hub

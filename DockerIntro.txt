@@ -61,6 +61,49 @@ $ docker ps
 You should see the following output, confirming that Docker is installed and running:
 
 CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
+----------------------------------------------------------------------------------------------------------------------------------
+image = OS+application runtime+packages/libraries+app code
+image is like complete suite
+
+docker Images -> List down the images in the server
+docker pull image-name:version -> download the image from docker-Hub(Its a location where we can get all images available)
+
+image = static
+container = when you run image, you get container. container is the running version of image
+
+docker create [image-id] -> it creates container-id
+docker ps -a -> list down all containers including created/running/stopped/exited
+docker ps -> list down running containers
+docker start [image-id] -> to start images
+docker stop [image-id] -> to stop images
+docker run -> pull+create+start
+docker rm `docker ps -a -q` -> removing all containers.
+docker rmi `docker images -a -q` -> removing all images
+docker rmi <image-id> -> removes particular image
+
+port forwarding:
+every server having 0-65535 PORTS
+like same every container also having 0-65535 PORTS
+docker run -p <host-port>:<container-port> image
+Disadvantage: It runs in foreground and attaches to screen. we cant run anything.
+docker run -d -p <host-port>:<container-port> image - it can run in background
+
+docker exec -it <container-id> bash
+
+Interview Questions:
+How can you do port forwarding?
+docker run -p <host-port>:<container-port> image - its in forground
+docker run -d -p <host-port>:<container-port> image - it can run in background
+how to login into running container?
+docker exec -it <container-id> bash/sh
+
+docker run -d --name mynginx -p 8080:80 nginx -> to set name for container
+
+
+
+
+
+
 
 
 
