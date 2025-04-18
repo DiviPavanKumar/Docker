@@ -97,10 +97,6 @@ docker run -d -p <host-port>:<container-port> image - it can run in background
 how to login into running container?
 docker exec -it <container-id> bash/sh
 
-docker run -d --name mynginx -p 8080:80 nginx -> to set name for container
-
-docker logs <container-id> - to check logs
-
 ---------------------------------------------------------------------------------------
 
 How to create Image:
@@ -108,6 +104,26 @@ How to create Image:
 dockerfile -> declarative way of creating own images
 docker is declarative way of creating images
 We can build the images and can push to any docker repository
+
+FROM -> to select base OS
+RUN -> to install or configure packages/images inside base OS - it will run only at image creation
+CMD -> to run the container, it will only run at container creation
+while running container, your CMD command should keep your container running for infinite times
+
+Interview question:
+whats the difference between RUN and CMD in docker?
+
+systemctl will not work inside the container. it only works inside VMs
+
+
+how to biuld images:
+docker build -t <name of image>:<versiondeclaration> .
+
+docker run -d --name mynginx -p 8080:80 nginx -> to set name for container
+
+docker logs <container-id> - to check logs
+
+
 
 
 
