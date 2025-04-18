@@ -28,75 +28,76 @@ Example: Roboshop Project using Containers:
   - Catalogue -> Container
 
 Installing Docker on Amazon Linux (EC2)
-Step 1: Launch an EC2 Instance
-Go to AWS Console and create a new EC2 instance.
+- Step 1: Launch an EC2 Instance
+- Go to AWS Console and create a new EC2 instance.
 
-Step 2: Update Package Cache
-$ sudo yum update -y
+- Step 2: Update Package Cache
+- $ sudo yum update -y
 
-Step 3: Install Docker
-For Amazon Linux 2:
-$ sudo amazon-linux-extras install docker
+- Step 3: Install Docker
+- For Amazon Linux 2:
+- $ sudo amazon-linux-extras install docker
 
-For Amazon Linux 2023:
-$ sudo yum install -y docker
+- For Amazon Linux 2023:
+- $ sudo yum install -y docker
 
-Step 4: Start Docker Service
-$ sudo service docker start
+- Step 4: Start Docker Service
+- $ sudo service docker start
 
-Step 5: Add User to Docker Group
-$ sudo usermod -a -G docker ec2-user
+- Step 5: Add User to Docker Group
+- $ sudo usermod -a -G docker ec2-user
 
-Step 6: Reconnect to Your Instance
-Log out and log back in to apply group changes.
+- Step 6: Reconnect to Your Instance
+- Log out and log back in to apply group changes.
 
-Step 7: Verify Docker Installation
-$ docker ps
-Understanding Docker Components
-Image:
-An image is a lightweight, standalone package that includes everything needed to run a piece of software: code, runtime, libraries, and environment variables.
+- Step 7: Verify Docker Installation
+- $ docker ps
+- Understanding Docker Components
+- Image:
+- An image is a lightweight, standalone package that includes everything needed to run a piece of software: - code, runtime, libraries, and environment variables.
 
-Container:
-A container is a runnable instance of an image.
+- Container:
+- A container is a runnable instance of an image.
 
-Docker Hub:
-A cloud-based registry where Docker users can store and share container images.
+- Docker Hub:
+- A cloud-based registry where Docker users can store and share container images.
 
-Common Docker Commands
-docker images - List all images
-docker pull <image>:<version> - Download image from Docker Hub
-docker create <image> - Create container from image
-docker ps -a - List all containers (including stopped ones)
-docker ps - List running containers
-docker start <container> - Start an existing container
-docker stop <container> - Stop a running container
-docker run <image> - Pull, create, and start a container
-docker rm $(docker ps -a -q) - Remove all containers
-docker rmi $(docker images -q) - Remove all images
-docker rmi <image-id> - Remove specific image
-Port Forwarding in Docker
-Each container, like a server, has its own port range (0-65535). To expose a container's service to the host machine:
+- Common Docker Commands
+- docker images - List all images
+- docker pull <image>:<version> - Download image from Docker Hub
+- docker create <image> - Create container from image
+- docker ps -a - List all containers (including stopped ones)
+- docker ps - List running containers
+- docker start <container> - Start an existing container
+- docker stop <container> - Stop a running container
+- docker run <image> - Pull, create, and start a container
+- docker rm $(docker ps -a -q) - Remove all containers
+- docker rmi $(docker images -q) - Remove all images
+- docker rmi <image-id> - Remove specific image
+- Port Forwarding in Docker
+- Each container, like a server, has its own port range (0-65535). 
 
-docker run -p <host-port>:<container-port> <image>
+- To expose a container's service to the - host machine:
 
-Foreground Mode:
-docker run -p 8080:80 nginx
+- docker run -p <host-port>:<container-port> <image>
 
-Background Mode:
-docker run -d -p 8080:80 nginx
+- Foreground Mode:
+- docker run -p 8080:80 nginx
+
+- Background Mode:
+- docker run -d -p 8080:80 nginx
  
+- Useful Docker Commands
+- Access container shell:
+- docker exec -it <container-id> bash
 
-Useful Docker Commands
-Access container shell:
-docker exec -it <container-id> bash
+- Set custom container name:
+- docker run -d --name mynginx -p 8080:80 nginx
 
-Set custom container name:
-docker run -d --name mynginx -p 8080:80 nginx
+- View container logs:
+- docker logs <container-id>
 
-View container logs:
-docker logs <container-id>
-
-Interview Questions on Docker
+- Interview Questions on Docker
 
 1. How can you do port forwarding in Docker?
    - Foreground: docker run -p <host-port>:<container-port> <image>
@@ -113,6 +114,6 @@ Interview Questions on Docker
 
 5. What is the difference between Docker image and container?
    - Image is a static package; container is the running instance of that image.
-   
-Conclusion
-Docker revolutionizes how modern applications are built and deployed. Its lightweight and consistent containerized approach simplifies development workflows and enhances resource efficiency. Whether you're building microservices or deploying production-ready applications, Docker is a must-have tool in every DevOps engineer's toolkit.
+
+- Conclusion
+- Docker revolutionizes how modern applications are built and deployed. Its lightweight and consistent containerized approach simplifies development workflows and enhances resource efficiency. Whether you're building microservices or deploying production-ready applications, Docker is a must-have tool in every DevOps engineer's toolkit.
