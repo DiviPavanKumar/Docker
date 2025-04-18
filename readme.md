@@ -29,14 +29,14 @@ Example: Roboshop Project using Containers:
 
 Installing Docker on Amazon Linux (EC2)
 - Step 1: Launch an EC2 Instance
-- Go to AWS Console and create a new EC2 instance.
+Go to AWS Console and create a new EC2 instance.
 
 - Step 2: Update Package Cache
-- $ sudo yum update -y
+$ sudo yum update -y
 
 - Step 3: Install Docker
 - For Amazon Linux 2:
-- $ sudo amazon-linux-extras install docker
+$ sudo amazon-linux-extras install docker
 
 - For Amazon Linux 2023:
 - $ sudo yum install -y docker
